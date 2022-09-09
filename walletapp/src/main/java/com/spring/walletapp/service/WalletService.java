@@ -19,7 +19,7 @@ public class WalletService {
     }
     public Wallet getByid(Long id){
         Optional<Wallet> wallet=walletRepository.findById(id);
-        if(wallet.isPresent()){ walletRepository.delete(wallet.get());
+        if(wallet.isPresent()){
             return wallet.get();}
         throw new WalletException("Wallet with "+id+" does not exists!");
     }
